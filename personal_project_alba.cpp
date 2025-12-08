@@ -1,17 +1,24 @@
-#include <iostream>  
-#include <cmath>  
-#include <iomanip> 
-#include <cctype>
+//DECEMBER 8, 2025 (4:28 pm)
+#include <iostream>  //mandatory header file 
+#include <cmath>  //for calculations 
+#include <iomanip> //i personally forgot
+#include <cctype> //for character manipulation (small or big letter/s) 
 using namespace std;
 
 // NAME: ALBA, AERICK LEE P. 
 // DATE: FEBRUARY 16, 2025 (3:46 pm) 
 // PROJECT: ACADEMIC TOOL HUB 
-// The Academic tool hub consists of 4 subjects: math, english, 
+// The Academic Hub consists of 4 subjects: math, english, 
 // filipino and science. It will be helpful for students of all 
 // ages and year-levels
 
-void accMenu(int& number)
+// OVERALL UPDATE AS OF DECEMBER 8, 2025 (6:30 pm):
+// ENGLISH, FILIPINO AND SCIENCE will hopefully be utilized
+// CONTEMPLATING in MATH because i want to add PHYSICS and STATISTICS separately under MATH
+// Will try to integrate more concepts to this project in the future
+
+//for all users (students & teachers)
+void accMenu(int& number)  
 {
     cout << "WELCOME!\n"
             "====================\n"
@@ -21,7 +28,8 @@ void accMenu(int& number)
             "ENTER YOUR CHOICE: "; cin >> number; 
 }
 
-void accCreate(string& name, int& age, char& choice)
+//for all users (students & teachers)
+void accCreate(string& name, int& age, char& choice) 
 {
     cout << "===== ACCOUNT CREATION =====\n"
             "ENTER YOUR NAME: "; cin >> name;
@@ -37,15 +45,24 @@ void accCreate(string& name, int& age, char& choice)
     choice = toupper(choice); 
 }
 
+//to be continued
 void teacherMenu()
 {
     cout << "WELCOME TO THE ACADEMIC TOOL HUB! (for teachers)\n"
-            "====================\n";  
+            "====================\n"
+            "[1] MATH"
+            "[2] ENGLISH"
+            "[3] SCIENCE"
+            "[4] FILIPINO"; 
+
+    //The function or purpose for teachers in using Academic Hub: 
+    // track student progress ; grade student scores ; provide lessons via uploads 
+    // generate tests for them 
+
 }
 
-//I USED FOR-LOOP FOR THE MENU OF STUDENTS 
-// (which contains the four subjects i initially mentioned: math, 
-// english, filipino and science) 
+//STUDENT MENU: for-loop, array, switch  
+// (contains the four subjects for this project: math, english, filipino and science) 
 void studentMenu(int &number, string student_menu[])
 {
     cout << "WELCOME TO THE ACADEMIC TOOL HUB! (for students)\n";
@@ -60,7 +77,7 @@ void studentMenu(int &number, string student_menu[])
     cout << "====================\n";
 }
 
-//I USED FOR-LOOP FOR THE MENU OF MATH LESSONS
+//MATH MENU: for-loop, array, switch 
 void mathMenu(int& number, string math_menu[])
 {
     cout << "WELCOME TO MATH!\n"
@@ -76,6 +93,8 @@ void mathMenu(int& number, string math_menu[])
      cout << "====================\n"; 
 }
 
+// MULTIPLICATION TABLES: will try to understand how the code works in this part since i used AI on how 
+// it displays each multiplication table 
 void mathTable(char &choice, int &b)
 {
     do 
@@ -120,6 +139,12 @@ void mathTable(char &choice, int &b)
     cout << "THANK YOU FOR USING MATH! :-)\n"; 
 }
 
+// a simple execution of a conditional statement (switch case) 
+// a beginner friendly C++ system that allows the user how a calculator works through 
+// the selection of operations that they want to perform. 
+// i'm contemplating for this to be dynamic in the future
+// example: instead of users being limited to only entering two numbers, 
+// they can enter as many numbers as they want 
 void mathCalc(char &choice, int& num1, int& num2, int& sum, int& diff, 
     int& prod, int& quo, int& modulo)
 {
@@ -176,7 +201,8 @@ void mathCalc(char &choice, int& num1, int& num2, int& sum, int& diff,
     cout << "THANK YOU FOR USING MATH! :-)\n";
 }
 
-//I USED FOR-LOOP FOR THE MENU OF V.O.F. (volume of figures)
+// MATH VOLUME MENU: for-loop, array, switch
+// contemplating to add more volume of figures. to be continued 
 void mathVolume(char &choice, int& side, int& cube, int& length, 
     int& width, int& height, int& rec_prism, int& radius, int& sphere, 
     int& cylinder, float& sphere_fraction, float& pi, string math_volume[])
@@ -238,6 +264,8 @@ void mathVolume(char &choice, int& side, int& cube, int& length,
     cout << "THANK YOU FOR USING MATH! :-)\n";   
 }
 
+// a simple execution of a conditional statement (if else) 
+// checks if a number is odd or even 
 void mathOdd(int& number, char& choice)
 {
     do
@@ -267,6 +295,8 @@ void mathOdd(int& number, char& choice)
     cout << "THANK YOU FOR USING MATH! :-)\n";  
 }
 
+// a simple execution of a conditional statement (if else) 
+// checks if a number is positive or negative 
 void mathPositive(int& number, char& choice)
 {
     do
@@ -296,6 +326,7 @@ void mathPositive(int& number, char& choice)
     cout << "THANK YOU FOR USING MATH! :-)\n";   
 }
 
+// a simple execution of a conditional statement (if else) 
 void mathBig(int& num1, int& num2, char& choice)
 {
     do
@@ -323,8 +354,8 @@ void mathBig(int& num1, int& num2, char& choice)
     cout << "THANK YOU FOR USING MATH! :-)\n"; 
 }
 
-//I USED FOR-LOOP FOR THE MENU OF OTHERS (other features of math that are 
-// not well-known/underutilized in school) 
+// OTHER MATH TOPICS MENU: for-loop, array, switch 
+// (other features of math that are not well-known/underutilized in school) 
 void mathOther(char& choice, string math_others[])
 {
     cout << "===== OTHERS =====\n";
@@ -339,6 +370,7 @@ void mathOther(char& choice, string math_others[])
     choice = toupper(choice); 
 }
 
+// mathematical built in c++ functions utilized: sqrt (square root) 
 void mathSquareroot(double& digit, double& answer, char& choice)
 {
     do
@@ -355,6 +387,7 @@ void mathSquareroot(double& digit, double& answer, char& choice)
     cout << "THANK YOU FOR USING MATH! :-)\n";    
 }
 
+// mathematical built in c++ functions utilized: pow (power) 
 void mathPower(int& power, int& number, char& choice)
 {
     do
@@ -371,6 +404,7 @@ void mathPower(int& power, int& number, char& choice)
     cout << "THANK YOU FOR USING MATH! :-)\n";   
 }
 
+// mathematical built in c++ functions utilized: ceil & floor
 void mathCeilfloor(float& symbol, char& choice)
 {
     do
@@ -387,6 +421,9 @@ void mathCeilfloor(float& symbol, char& choice)
     } while (choice == 'Y');
 }
 
+// MATH CONVERSION MENU: contemplating to re-code everything under this menu in vice-versa.
+// example: if a user has already tried converting their input in meters to kilometers, the system would 
+// should also allow them to try converting kilometers to meters 
 void mathUnitconversion(char& choice)
 {    
         cout << "===== UNIT CONVERSION =====\n"
@@ -399,6 +436,7 @@ void mathUnitconversion(char& choice)
         choice = toupper(choice); 
 }
 
+// mathematical computation (meter - kilometer conversion). i searched online for the formula used 
 void mathMetertokilometer(int& meter, double& formula, char& choice)
 {
     do
@@ -414,6 +452,7 @@ void mathMetertokilometer(int& meter, double& formula, char& choice)
     while (choice == 'Y');
 }
 
+// mathematical computation (centimeter - meter conversion). i searched online for the formula used 
 void mathCentimetertometer(double& centimeter, double& solution, char& choice)
 {
     do
@@ -429,6 +468,7 @@ void mathCentimetertometer(double& centimeter, double& solution, char& choice)
     while (choice == 'Y');
 }
 
+// STATISTICS MENU: not fully utilized yet. to be continued 
 void mathStatisticsmenu(char& choice)
 {
     cout << "===== STATISTICS =====\n"
@@ -440,6 +480,8 @@ void mathStatisticsmenu(char& choice)
     choice = toupper(choice); 
 }
 
+// SIMPLE INTEREST: a block of code i have learned during my first year of college
+// in a subject 'COMPUTER PROGRAMMING 1'
 void mathSimpleinterest(char& choice, float& interest, int& time, int& amount, 
     int& the_formula, int& the_answer)
 {
@@ -460,6 +502,7 @@ void mathSimpleinterest(char& choice, float& interest, int& time, int& amount,
     cout << "THANK YOU FOR USING MATH! :-)\n";
 }
 
+// ENGLISH MENU: not fully utilized yet. to be continued 
 void englishMenu(int& number) 
 {
     cout << "WELCOME TO ENGLISH!\n"
@@ -470,6 +513,7 @@ void englishMenu(int& number)
     cout << "====================\n"; 
 }
 
+// ENGLISH CONSONANT: same principle with the FILIPINO KATINIG void function 
 void englishConsonant(char& choice)
 {
     do
@@ -500,6 +544,7 @@ void englishConsonant(char& choice)
     cout << "THANK YOU FOR USING ENGLISH! :-)\n";     
 }
 
+// FILIPINO MENU: not fully utilized yet. to be continued 
 void filipinoMenu(int& number) 
 {
     cout << "WELCOME TO FILIPINO!\n" 
@@ -510,6 +555,10 @@ void filipinoMenu(int& number)
     cout << "====================\n"; 
 }
 
+// FILIPINO KATINIG: a simple execution of a conditional structure (switch case) that allows the
+// user to sift through options that outweigh the many (the alphabet has 26 letters, only 5 of them are vowels
+// , instead of coding al 26, i only coded the 5 vowels needed to determine whether a letter entered by the
+// user is a vowel or a consonant
 void filipinoKatinig(char& choice)
 {
     do
@@ -520,8 +569,7 @@ void filipinoKatinig(char& choice)
         choice = toupper(choice); 
 
         switch (choice)
-        {
-            
+        {            
             case 'A':            
             case 'E':            
             case 'I':            
@@ -540,6 +588,7 @@ void filipinoKatinig(char& choice)
     while (choice == 'Y');
 }
 
+// SCIENCE MENU: not fully utilized yet. to be continued 
 void scienceMenu(int& number)
 {
     cout << "WELCOME TO SCIENCE!\n"
@@ -550,6 +599,7 @@ void scienceMenu(int& number)
     cout << "====================\n";      
 }
 
+// not fully utilized yet 
 void scienceTempmenu(char& choice)
 {
     cout << "===== TEMPERATURE CONVERTER =====\n"
@@ -561,6 +611,7 @@ void scienceTempmenu(char& choice)
     choice = toupper(choice); 
 }
 
+// scientific computation (farenheit). i searched online for the formula used
 void scienceConvertfarenheit(double& celcius, int& farenheit, char &choice)
 { 
     do 
@@ -575,6 +626,7 @@ void scienceConvertfarenheit(double& celcius, int& farenheit, char &choice)
     while (choice == 'Y');  
 }
 
+// MAIN MENU: every void function i constructed gets called here. 
 int main()
 {
     string name; 
