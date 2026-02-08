@@ -1,6 +1,7 @@
 # NOTES:
 
 An official name for this system is still a work in progress
+No Working Product as of the moment, you can only use the system via a compiler of your choice
 
 # LMS 1.0: OVERVIEW:
 
